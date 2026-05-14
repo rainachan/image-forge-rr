@@ -1,0 +1,75 @@
+id: crayon-kid
+name: 儿童蜡笔画（Crayon Kid · Hand-drawn by a 10-year-old）
+author: "@rainachen"
+source: |
+  Workspace mirror of the canonical "crayon-kid" prompt from the upstream
+  image-forge project (https://github.com/ChenyqThu/image-forge,
+  styles/crayon-kid.yaml). This file is a minor packaging variant — same
+  canonical prompt, with added size-constraint notes and edit-endpoint
+  defaults from local experience. Credit to the upstream author.
+
+placeholder: "[reference image, required — this style is photo→crayon transfer]"
+
+# ── Canonical prompt (verbatim — do not paraphrase) ───────────────
+canonical_prompt: |
+  Rework the given image into a crayon-style illustration,
+  transforming the entire scene into something that feels
+  hand-drawn by a 10-year-old. Keep the forms simple and
+  slightly imperfect, like a child's drawing.
+  Avoid using the original color palette — replace it with
+  bright, playful crayon colors on a clean white paper
+  background. Aim for a soft, cute, and innocent aesthetic.
+  Incorporate fun, childlike details such as castles or
+  towers, candy, stars, clouds, and other whimsical
+  decorations to amplify the playful vibe.
+  The final result should feel charming, colorful, and
+  full of childlike imagination.
+
+# ── Invocation (image-forge style) ───────────────────────────────
+invocation: |
+  uv run skills/image-forge/scripts/gpt_image2.py edit \
+    --prompt "<canonical_prompt full text>" \
+    -i ref.png \
+    --output out.png \
+    --size 1024x1024
+
+# ── Size constraints (OpenAI API layer, not image-forge specific) ─
+size_constraints:
+  edit_supported:
+    - "1024x1024"
+    - "1536x1024"
+    - "1024x1536"
+  generate_supported:
+    - "1024x1024"
+    - "1536x1024"
+    - "1024x1536"
+    - "2048x2048"
+    - "3840x2160"
+    - "2160x3840"
+  safe_default: "1024x1024"
+  warning: |
+    The edit endpoint will reject 2048 or 4K sizes.
+    Safe rule: edit always at 1024x1024. If 4K is required, switch to
+    generate — but the generate endpoint loses subject fidelity, which
+    defeats the point of this style.
+
+hard_avoids:
+  - "❌ Using the generate endpoint — loses person / scene fidelity to the reference"
+  - "❌ Running without a reference image — ask for one, do not improvise"
+  - "❌ Passing edit a size other than 1024x1024 / 1536x1024 / 1024x1536 — API error"
+  - "❌ Expecting compositional changes — this style preserves the original layout"
+
+defaults:
+  endpoint: "edit"
+  size: "1024x1024"
+  quality: "high"
+
+usage_notes: |
+  - **Do not paraphrase canonical_prompt** — this is the upstream
+    image-forge text verbatim.
+  - Trigger phrases: "make it crayon" / "kid drawing" / "10-year-old style".
+  - Without a reference image, ask the user for one. Do not try to generate
+    from scratch — the style is defined as a transfer, not a generation.
+  - High subject fidelity is the strength; lack of recomposition is the
+    weakness. For pose / scene changes, pick a different style.
+  - Backend: GPT Image 2 **edit endpoint** (not generate).

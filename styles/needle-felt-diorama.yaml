@@ -1,0 +1,85 @@
+id: needle-felt-diorama
+name: 羊毛毡微缩场景（Needle Felt Diorama · Chibi Plushie）
+author: "@rainachen"
+source: |
+  Workspace-grown variant. Style definition: "needle-felted wool × chibi
+  head-body ratio × miniature product-photography lighting". Not 2D
+  illustration, not 3D model — it simulates a hand-felted plushie photo:
+  fuzzy soft silhouette + real macro-photo light + a 2D doodle overlay layer.
+
+  An upstream cousin of this style exists at
+    https://github.com/ChenyqThu/image-forge (styles/needle-felt-chibi.yaml)
+  See `styles/upstream/` for unmodified upstream mirrors of other styles.
+  Credit to that line of work for the felt-photography foundation.
+
+placeholder: "[character or group photo, e.g. a cat + a person at tea / a group portrait]"
+
+# ── Canonical prompt body (paste verbatim, do NOT paraphrase) ─────
+canonical_prompt: |
+  needle felted wool diorama, chibi plushie style,
+  handmade felt photography, soft fuzzy fiber texture,
+  cozy tea party scene, cream beige warm background,
+  golden hour indoor lighting, shallow depth of field,
+  knitted round rug, clay teapot with steam,
+  2D doodle overlays (thought bubbles, hearts, paw prints),
+  mixed media, kawaii, wholesome, square composition,
+  miniature scale product photography
+
+# ── Short keyword version (quick speed-test) ──────────────────────
+short_keywords: |
+  needle felted wool, macro photography, soft fuzzy fiber texture,
+  warm beige palette, cozy diorama
+
+# ── Critical rules — every bullet is load-bearing ─────────────────
+critical_rules:
+  - "Head-to-body ratio locked to 1 : 1.5–2 (big head dumpling) — do not let it stretch into a normal 3D figurine."
+  - "Must explicitly include 'fuzzy / felted fiber texture' or output will degrade into smooth plastic toys."
+  - "Warm beige background + indoor warm lamp = the 'home interior' baseline; do not let the model default to white studio."
+  - "Cyber / sci-fi characters: describe them as 'glowing tron lines on felted body' so the felt material stays but glow-stitching is added."
+  - "The 2D doodle overlay (hearts, paw prints, thought bubbles) is the soul of this style. Without it the result collapses into plain 3D plushie photography."
+
+hard_avoids:
+  - "❌ 'Pixar style' / '3D render' / 'smooth' — instant drift into generic chibi modeling, kills the felt texture"
+  - "❌ Studio white background — kills the cozy mood"
+  - "❌ Realistic human body proportions — conflicts with chibi"
+  - "❌ Missing 2D doodle overlay — collapses to a 3D plushie photo"
+
+# ── Variables for group-photo composition ────────────────────────
+# [characters_with_anchors]
+#   Subjects + per-character visual anchors. For multi-character scenes,
+#   spell each one out, e.g.:
+#     - person A: short black hair, round glasses, black turtleneck
+#     - cat:      bicolor ragdoll, inverted-V white face, blue eyes
+#     - cyber bot: glowing tron lines on felted body, dark base
+#
+# [scene_override] (optional)
+#   Replace "cozy tea party scene" in canonical_prompt. Examples:
+#     - "miniature kitchen counter with toy ingredients"
+#     - "windowsill scene with potted plants and afternoon sunlight"
+# ─────────────────────────────────────────────────────────────────
+
+prompt_template: |
+  Subject: [characters_with_anchors].
+
+  [Insert canonical_prompt verbatim. If a scene_override is provided, swap
+  "cozy tea party scene" for the override; do NOT paraphrase anything else.]
+
+  Hard avoids: NOT Pixar style, NOT 3D render, NOT smooth plastic surface,
+  NOT studio white background, NOT realistic body proportions, NOT missing
+  2D doodle overlay layer.
+
+defaults:
+  endpoint: "generate"
+  size: "1024x1024"
+  quality: "high"
+
+usage_notes: |
+  - **Do not paraphrase canonical_prompt.** It is a field-tested string;
+    rewriting any part of it tends to break either the felt texture or the
+    doodle overlay.
+  - This is prompt-only (generate endpoint), no reference image needed.
+  - For multi-character group shots, anchors are mandatory. Without them the
+    model fuses every character into "the same fuzzy ball".
+  - Use negative prompting actively against: Pixar / 3D render / smooth /
+    glossy. These tokens drift the style fastest.
+  - Backend: GPT Image 2 generate.
