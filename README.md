@@ -18,6 +18,7 @@ image-forge-rr/
     ├── cat-jean-jullien.yaml
     ├── cat-nordic-picturebook.yaml
     ├── crayon-kid.yaml                 # close mirror of upstream, with size/edit notes
+    ├── journal-spread.yaml
     ├── journal-sticker.yaml
     ├── minimal-line.yaml
     ├── needle-felt-diorama.yaml        # rr-flavored variant; upstream cousin: needle-felt-chibi
@@ -44,6 +45,7 @@ image-forge-rr/
 | `sketchbook-watercolor-diary.yaml` | Multi-pose diary page on grid paper, washi-tape labels, hand-written captions. Best for "a week of X". | gpt-image-2 generate | no |
 | `cat-jean-jullien.yaml`            | Single-image cat portrait with thick brush ink + 3 muted flat colors + lots of white space. Witty, not cute-cute. | gpt-image-2 generate | no |
 | `cat-nordic-picturebook.yaml`      | Single-image cat portrait in Nordic picture-book sensibility — flat watercolor misaligned with ink, paper grain. | gpt-image-2 generate | no |
+| `journal-spread.yaml`              | Full-page top-down flat-lay journal spread — washi tape, polaroids, sticky notes, doodles. Three palettes: warm-kraft / morandi-soft / night-reader. | gpt-image-2 generate (low quality) | no |
 | `journal-sticker.yaml`             | People-with-pet stickers on cream paper, die-cut white border, washi-tape. Tuned for series. | gpt-image-2 generate (low quality) | no |
 | `tranquil-botanical-sketch.yaml`   | Fine-liner editorial line portrait + dense botanicals, strict monochrome with one coral spot. | gpt-image-2 generate | no |
 | `needle-felt-diorama.yaml`         | Chibi felt plushies in a miniature-photo diorama with a 2D doodle overlay. Multi-character group photos. | gpt-image-2 generate | no |

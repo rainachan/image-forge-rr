@@ -1,0 +1,117 @@
+id: journal-spread
+name: 手帐日记摊开页（Journal Spread Flat-Lay）
+author: "@xiaok"
+source: |
+  Workspace-grown style for full-page journal / bullet-journal spreads —
+  top-down flat-lay of an opened paper journal with washi tape, taped
+  polaroids, sticky notes, doodle icons, handwriting. Different from
+  journal-sticker (single die-cut character sticker): this is a whole
+  page spread with no main subject, used for daily logs, mood diary
+  entries, trip records, anniversary cards, recap posters.
+
+# ──────────────────────────────────────────
+# 风格核心定义
+# ──────────────────────────────────────────
+# 核心原则：贴上去的感觉 > 画出来的感觉。
+#   元素全是 "撕、贴、夹、压" 出来的层次，不是平面排版。
+#   info-dense 但留白透气，手写体混排，色彩克制。
+#
+# 视觉：top-down flat-lay，整页摊开的牛皮纸/米黄/牛奶白纸面
+# 元素：washi tape 撕边胶带、拍立得歪叠、便签纸卷边、手写笔记、
+#       涂鸦小图标（箭头/星星/check box/小爱心）、咖啡渍点缀
+# 字体：标题粗手写马克笔，正文细圆珠笔/钢笔，重点词荧光黄/红圈
+# 配色三档（选一）：
+#   warm-kraft     牛皮纸 + 深棕墨水 + 一抹砖红（最经典）
+#   morandi-soft   米白 + 莫兰迪绿/粉/蓝小色块（小清新）
+#   night-reader   黑卡纸 + 白笔 + 金箔（夜读流）
+# 禁忌：数字排版感、Canva 模板感、过度对齐、3D 渲染、硬阴影
+
+description: |
+  俯视摊开式手帐日记页，整页 flat-lay 拼贴。胶带、拍立得、便签、
+  手写笔记、涂鸦图标层层叠叠，留白透气。适合日记打卡、心情记录、
+  旅行回顾、纪念卡、周报海报。和 journal-sticker 互补：那个是单张
+  贴纸（人+宠物角色卡），这个是整页（无主角，事件/时间流为主）。
+
+placeholder: "[topic of the journal page, e.g. 'a weekend trip to Big Sur']"
+
+# ──────────────────────────────────────────
+# Variables
+# ──────────────────────────────────────────
+variables:
+  required:
+    - name: topic
+      desc: "本页主题，如：周末 Big Sur 自驾 / 这周看的三本书 / 今日心情 / 团队 Q2 回顾"
+  optional:
+    - name: palette
+      desc: "配色档位：warm-kraft / morandi-soft / night-reader"
+      default: "warm-kraft"
+    - name: language
+      desc: "手写文字主语言：english / chinese / mixed"
+      default: "english"
+    - name: date_stamp
+      desc: "页面左上日期戳，如 '2026 · 05 · 25 · MON'"
+      default: "today's date"
+    - name: extra_elements
+      desc: "额外特色元素（1-2 个），如：dried flower / boarding pass stub / tea bag tag / pressed leaf / ticket"
+      default: "a small dried flower and a paperclip"
+
+# ──────────────────────────────────────────
+# Prompt Recipe
+# ──────────────────────────────────────────
+prompt_template: |
+  A top-down flat-lay photograph of an opened paper journal spread about
+  "{topic}". The page is filled with a layered scrapbook-style collage
+  composition — every element looks physically taped, pasted, paperclipped,
+  or tucked onto the page, NOT digitally arranged.
+
+  Page base: textured {palette} paper — slight grain, soft natural shadows
+  along the spine and at the edges of each pasted element to sell the
+  three-dimensional layered feeling.
+
+  Compose with these elements, loosely arranged with intentional imperfect
+  alignment (slight rotation, overlap, edges peeking out):
+  - 1-2 strips of washi tape with torn or decorative edges, taping down
+    a corner of a polaroid or notecard
+  - 2-3 small polaroid-style photos, slightly rotated and overlapping,
+    each with a thin white border and a tiny handwritten caption beneath
+  - 1-2 sticky notes (post-it style) with curled corners and a few lines
+    of handwritten notes
+  - Handwritten body text in cursive or natural print, ballpoint or
+    fountain pen, in {language}
+  - A bold hand-lettered title at the top of the page, in marker or
+    brush pen, larger and more confident than the body text
+  - Small doodle icons interleaved: arrows, stars, check boxes,
+    tiny hearts, weather symbols, simple flowers — sparse, never crowded
+  - 1-2 highlighted keywords (highlighter swipe or hand-drawn circle in
+    accent color)
+  - {date_stamp} stamp or hand-written in the top corner
+  - {extra_elements} as tactile accent objects resting on the page
+
+  Color discipline (palette = {palette}):
+  - warm-kraft: kraft / cream paper, dark sepia ink, one warm brick-red
+    or burnt-orange accent, muted earth tones
+  - morandi-soft: off-white paper, muted sage / dusty pink / dusty blue
+    color blocks, soft graphite handwriting
+  - night-reader: black or dark navy paper, white gel pen handwriting,
+    gold foil or warm yellow highlights, occasional ivory paper layer
+
+  Lighting: soft natural daylight from one side, gentle diffuse shadows,
+  shot like a lifestyle stationery photograph. Camera angle: directly
+  overhead, slight handheld imperfection — NOT a perfectly squared
+  studio shot. Composition fills the frame; small areas of the page
+  remain visible to breathe.
+
+  Overall mood: warm, personal, lived-in, info-dense yet airy, the
+  feeling of flipping open someone's actual journal.
+
+  NEGATIVE CONSTRAINTS: no digital UI / app screenshot look, no Canva
+  template feel, no perfectly aligned grid, no flat vector illustration,
+  no 3D render, no harsh studio shadows, no over-saturated colors, no
+  glossy magazine layout, no AI-typed text that looks printed, no main
+  character or portrait subject (this is a page, not a sticker).
+
+aspect_ratio: "3:4"
+preferred_backend: gpt-image-2
+tags: [journal, scrapbook, flat-lay, handwritten, washi-tape, polaroid, lifestyle, paper]
+
+test_subject: "a weekend trip to Big Sur with two friends"
