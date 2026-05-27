@@ -17,6 +17,7 @@ image-forge-rr/
 └── styles/
     ├── cat-jean-jullien.yaml
     ├── cat-nordic-picturebook.yaml
+    ├── crayon-doodle-poster.yaml
     ├── crayon-kid.yaml                 # close mirror of upstream, with size/edit notes
     ├── journal-spread.yaml
     ├── journal-sticker.yaml
@@ -49,6 +50,7 @@ image-forge-rr/
 | `journal-sticker.yaml`             | People-with-pet stickers on cream paper, die-cut white border, washi-tape. Tuned for series. | gpt-image-2 generate (low quality) | no |
 | `tranquil-botanical-sketch.yaml`   | Fine-liner editorial line portrait + dense botanicals, strict monochrome with one coral spot. | gpt-image-2 generate | no |
 | `needle-felt-diorama.yaml`         | Chibi felt plushies in a miniature-photo diorama with a 2D doodle overlay. Multi-character group photos. | gpt-image-2 generate | no |
+| `crayon-doodle-poster.yaml`        | Single-scene maximalist crayon + color-pencil POSTER. Oversized chibi + mascot + scribble doodles filling the canvas. Distinct from journal family (no grid, no ink, no watercolor). | Gemini Nano Banana 2 preferred (gpt-image-2 edit hits 524) | optional |
 | `crayon-kid.yaml`                  | Photo → child crayon-drawing transfer. Verbatim mirror of the upstream prompt with local edit-endpoint notes. | gpt-image-2 **edit** | **required** |
 
 ### Upstream mirrors (unmodified)

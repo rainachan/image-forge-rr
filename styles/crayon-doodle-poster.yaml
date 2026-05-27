@@ -1,0 +1,184 @@
+id: crayon-doodle-poster
+name: 蜡笔涂鸦海报（Crayon Doodle Maximalist Poster）
+author: "small-K extraction from rr-style sample, 2026-05-25"
+source: |
+  Extracted from a hand-drawn chibi poster sample given by Kevin 2026-05-25.
+  Maximalist crayon-and-color-pencil POSTER style (NOT a journal/diary):
+  oversized chibi character front-and-center, oversized plushie / mascot
+  sidekick filling the background, scrawled English catchphrases, scribble-
+  energy doodle layers filling every corner of the canvas.
+
+  ⚠️ Explicitly NOT a journal/sketchbook style. The journal family uses
+  grid/graph paper, ink-pen linework, watercolor wash, multi-pose layout,
+  and a calm "recording" feel. This style is the OPPOSITE: single scene,
+  pure wax-crayon + color-pencil, emotional / venting energy, no paper grid.
+
+  Differences from sibling styles:
+    * crayon-kid                  = clean white paper, simple child drawing
+                                    (this style: SATURATED + LAYERED)
+    * sketchbook-watercolor-diary = grid-paper journal, ink+watercolor,
+                                    multi-pose, calm recording
+    * journal-sticker             = die-cut sticker on cream paper, washi tape
+    * crayon-doodle-poster (this) = single-scene MAXIMALIST crayon poster,
+                                    NO grid paper, NO ink-pen, NO watercolor
+
+placeholder: "[chibi character + oversized mascot, e.g. a girl + giant elephant plushie]"
+
+# ── Variables ──────────────────────────────────────────────────────────
+# [character_desc]
+#   Front-and-center chibi human, 4-6 highest-identifiability traits:
+#     - head/body ratio:  big head ~1:1.5, oversized eyes, tiny mouth, blush dots
+#     - hair:             long dark brown wavy hair past shoulders / short bob
+#     - headwear:         black NY baseball cap / orange beanie / NONE
+#     - glasses:          round black frames / NONE
+#     - outfit:           yellow plaid open shirt + white tee + grey wide pants
+#                         + crossbody bag + chunky black slippers
+#     - accessory:        holding phone / pet charm / orange fruit pin
+#     - pose:             waving, peace sign, looking straight at viewer
+#
+# [mascot_desc]
+#   Oversized plush / mascot behind the character. Examples:
+#     - giant grey elephant plush, oversized round head, tiny smile, big floppy
+#       ears, wearing a red "NO" baseball cap on top
+#     - giant white bear plush with hoodie
+#     - giant green dinosaur plush with crooked smile
+#
+# [signage_phrases]
+#   2-4 short English phrases scrawled into the scene, casual/sarcastic tone.
+#   Examples: "DO NOT DISTURB" (door-hanger), "NO" (on cap), "DREAM THE DO"
+#   (top-right sky), "wow~" (lowercase cursive), "??" floating question marks.
+#   Mix UPPERCASE block phrases + lowercase cursive + symbol scribbles.
+#
+# [bg_doodle_layers]
+#   What to fill background with. Pick 3-5:
+#     hearts, stars, scribble clouds, ?? marks, tiny smileys, small bunny plush
+#     in corner, citrus fruits, building skyline silhouette, grass tufts,
+#     scratchy color-pencil strokes, color smudges, signature stamp dot.
+# ───────────────────────────────────────────────────────────────────────
+
+prompt: |
+  A hand-drawn crayon-and-color-pencil poster page, single scene, MAXIMALIST
+  doodle background — every corner of the canvas is filled, no clean white
+  space except a faint paper-texture base.
+
+  Center subject: chibi character — [character_desc]. Big head, oversized
+  round eyes with tiny highlight dots, tiny nose, small smiling mouth, two
+  pink blush circles on cheeks. Stands front-and-center facing viewer.
+
+  Behind character: oversized mascot — [mascot_desc]. The mascot is roughly
+  2-3x the character's height, fills most of the upper half of the canvas,
+  partially hidden behind the character's body.
+
+  Background doodle layers (drawn AROUND and BEHIND the main figures):
+  [bg_doodle_layers]. Layered scribbles in many crayon colors — overlapping,
+  not neatly placed, with visible waxy crayon strokes and color-pencil
+  cross-hatching.
+
+  Signage / text — scrawled directly into the scene in handwritten kid-style
+  letters: [signage_phrases]. Mix block uppercase for loud phrases and
+  lowercase cursive for soft ones. Some letters slightly tilted / uneven.
+  Treat text as part of the drawing, not as a clean typographic overlay.
+
+  Drawing technique:
+  - Wax-crayon and color-pencil texture clearly visible — uneven fills,
+    scratchy strokes, paper grain showing through.
+  - Outlines drawn in soft black crayon: slightly wobbly, broken in places,
+    NOT clean vector lines.
+  - Bright saturated kid-palette: reds, yellows, blues, greens, teals, with
+    occasional pastel pink and lavender. Colors can sit next to each other
+    loudly.
+  - Small details (door-hanger sign, red X mark, plushie sidekick in corner,
+    orange fruit at feet, signature stamp) drawn at sticker-scale to add
+    "look closer" moments.
+
+  Whole image reads like a single emotional doodle poster — drawn in one
+  sitting with a box of crayons — energetic, slightly chaotic, NOT polished.
+  Vibe is "venting on paper", NOT "diary recording".
+
+  HARD AVOIDS:
+  - NOT digital vector, NOT 3D render, NOT cel-shaded anime
+  - NOT photorealistic, NOT airbrushed
+  - NOT a clean white-paper child drawing (this style is SATURATED and
+    LAYERED, opposite of crayon-kid)
+  - NOT a journal / sketchbook / diary page — NO grid or graph paper
+    background, NO ink-pen linework, NO watercolor wash, NO multi-pose grid,
+    NO washi-tape labels, NO calm "recording" composition
+  - NO clean typographic fonts — all text must be hand-scrawled
+  - NO artist signature / watermark / website URL in the corners
+
+defaults:
+  size: "1024x1536"   # portrait — matches journal-poster aspect of source
+  quality: "high"
+  preferred_backend: gpt-image-2
+
+aspect_ratio: "2:3"
+
+tags:
+  - crayon
+  - chibi
+  - doodle
+  - poster
+  - maximalist
+  - handmade
+  - kid-art
+  - venting
+
+aliases:
+  - 蜡笔涂鸦海报
+  - 蜡笔涂鸦
+  - 蜡笔海报
+  - chibi 涂鸦
+  - chibi 蜡笔
+  - 涂鸦海报
+  - 大眼娃涂鸦
+  - crayon doodle
+  - crayon doodle poster
+  - maximalist crayon
+  - doodle poster
+  - chibi crayon poster
+
+use_case_affinity:
+  - profile-avatar
+  - social-media-post
+  - poster-flyer
+avoid_for:
+  - ecommerce-main-image
+  - document-publication
+  - business-headshot
+  - journal-sticker
+
+key_phrases_to_preserve:
+  - "hand-drawn crayon-and-color-pencil poster"
+  - "MAXIMALIST doodle background"
+  - "chibi character"
+  - "oversized round eyes"
+  - "two pink blush circles"
+  - "oversized mascot"
+  - "wax-crayon and color-pencil texture"
+  - "hand-scrawled"
+  - "NOT digital vector, NOT 3D render"
+
+usage_notes: |
+  - This style is HIGH information-density. Keep [character_desc] to 4-6
+    traits, [mascot_desc] to 3-4 traits, otherwise the model averages
+    everything into generic chibi mush.
+  - For multi-character versions, increase canvas to 1024x1536 and treat
+    each character with its own 4-trait block.
+  - Background MUST be fully filled — if the model leaves white space, the
+    style read collapses to "ordinary child drawing". Push "every corner
+    filled" in the prompt.
+  - Signage phrases drive 70% of the personality. Always include at least
+    one sarcastic / introvert phrase (DO NOT DISTURB / NO / leave me alone /
+    DREAM THE DO) — that's the emotional signature of this style.
+  - For editing an existing photo into this style (Path E), prepend:
+    "Rework the given image into a maximalist crayon-doodle poster style.
+    Keep the subject's recognizable features but redraw in chibi proportions."
+
+edit_mode:
+  endpoint: "/openai/v1/images/edits"
+  notes: |
+    For converting a real photo → crayon-doodle-poster:
+    - Preserve identity anchors (hair length, glasses, outfit colors).
+    - Force chibi proportions (head ~1:1.5 to body).
+    - Add at least one oversized plushie mascot behind the subject.
+    - Add 2+ scrawled English signage phrases.
